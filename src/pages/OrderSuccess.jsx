@@ -1,0 +1,1 @@
+export default function OrderSuccess(){return(<div>Success</div>);}

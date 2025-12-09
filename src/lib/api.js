@@ -1,0 +1,1 @@
+export async function startCheckout(cart){const url=process.env.REACT_APP_STRIPE_LAMBDA_URL;const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:cart})});const d=await r.json();window.location.href=d.url;}
