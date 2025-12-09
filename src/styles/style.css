@@ -275,5 +275,15 @@ a {
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  
-  
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cart-summary-total {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 10px;
