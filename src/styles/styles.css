@@ -1,0 +1,70 @@
+/* GLOBAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fdf7f2;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #4a3f35;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #ffffff;
+  padding: 18px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4a3f35;
+  text-decoration: none;
+}
+
+.nav-cart {
+  font-size: 18px;
+  color: #4a3f35;
+  text-decoration: none;
+}
+
+/* LAYOUT */
+.main-wrapper {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-inner {
+  flex: 1;
+}
+
+/* HERO / TOP STRIP ON HOME */
+.hero {
+  padding: 40px 40px 10px 40px;
+}
+
+.hero-title {
+  font-size: 32px;
+  margin: 0 0 8px 0;
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: #7a6b5c;
+}
+
+/* SEARCH BAR */
