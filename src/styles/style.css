@@ -19,8 +19,7 @@ a {
 .hero-banner {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* Fill first screen */
-  background-image: url("../assets/hero-banner.jpg");
+  min-height: 100vh; /* Fill the entire first screen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,8 +27,8 @@ a {
   align-items: center;
   justify-content: center;
   padding: 0 5vw;
-  margin: 0;           /* No bottom gap */
-  border-radius: 0;    /* No rounded corners */
+  margin: 0;
+  border-radius: 0;
 }
 
 .hero-content {
@@ -106,7 +105,7 @@ a {
   flex: 1;
 }
 
-/* LEGACY HERO STRIP (if used elsewhere) */
+/* (Optional) Legacy top-strip hero – kept in case it's still used */
 .hero {
   padding: 40px 40px 10px 40px;
 }

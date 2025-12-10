@@ -11,29 +11,26 @@ export default function Hero({ onSearch }) {
 
   return (
     <section
-      className="hero-fullpage"
+      className="hero-banner"
       style={{ backgroundImage: `url(${heroBanner})` }}
     >
-      <div className="hero-overlay" />
-      <div className="hero-inner">
-        <h1 className="hero-title">Nova Marketplace</h1>
+      <div className="hero-content">
+        <h1 className="hero-brand">Nova Marketplace</h1>
 
-        <h2 className="hero-subtitle">
+        <h2 className="hero-tagline">
           Discover Handmade, Home &amp; Fashion Treasures
         </h2>
 
-        <p className="hero-text">
+        <p className="hero-subtext">
           Curated decor, textiles, apparel and unique artisan-crafted finds.
         </p>
 
-        <div className="hero-search-wrapper">
-          <input
-            type="text"
-            className="hero-search-input"
-            placeholder="Search for products..."
-            onChange={handleSearchChange}
-          />
-        </div>
+        <input
+          type="text"
+          className="hero-search"
+          placeholder="Search for products..."
+          onChange={handleSearchChange}
+        />
       </div>
     </section>
   );
