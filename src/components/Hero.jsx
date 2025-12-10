@@ -1,20 +1,40 @@
-export default function Hero({ onSearch }) {
-  return (
-    <div className="hero-banner">
-      <div className="hero-content">
-        <h1 className="hero-brand">Nova-Marketplace</h1>
-        <h2 className="hero-tagline">Discover Handmade, Home & Fashion Treasures</h2>
+// src/components/Hero.jsx
+import React from "react";
+import heroBanner from "../assets/hero-banner.jpg";
 
-        <p className="hero-subtext">
-          Curated décor, textiles, apparel and unique artisan-crafted finds.
+export default function Hero({ onSearch }) {
+  const handleSearchChange = (e) => {
+    if (onSearch) {
+      onSearch(e.target.value);
+    }
+  };
+
+  return (
+    <section
+      className="hero-fullpage"
+      style={{ backgroundImage: `url(${heroBanner})` }}
+    >
+      <div className="hero-overlay" />
+      <div className="hero-inner">
+        <h1 className="hero-title">Nova Marketplace</h1>
+
+        <h2 className="hero-subtitle">
+          Discover Handmade, Home &amp; Fashion Treasures
+        </h2>
+
+        <p className="hero-text">
+          Curated decor, textiles, apparel and unique artisan-crafted finds.
         </p>
 
-        <input
-          className="hero-search"
-          placeholder="Search for products..."
-          onChange={(e) => onSearch(e.target.value)}
-        />
+        <div className="hero-search-wrapper">
+          <input
+            type="text"
+            className="hero-search-input"
+            placeholder="Search for products..."
+            onChange={handleSearchChange}
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
