@@ -4,31 +4,25 @@
 .hero-banner {
   width: 100%;
   height: 360px;
-  background-image: url("/images/hero-banner.jpg"); /* <-- NEW IMAGE */
+  background-image: url("/images/hero-banner.jpg"); /* Correct file */
   background-size: cover;
   background-position: center;
-  border-radius: 0 0 20px 20px;
+  background-repeat: no-repeat;
+  border-radius: 14px;
+  margin-bottom: 30px;
+
   display: flex;
   align-items: center;
-  padding: 40px;
-  margin-bottom: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35); /* darkens image for readability */
+  justify-content: center;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  max-width: 520px;
+  text-align: center;
+  background: rgba(255,255,255,0.75);
+  padding: 18px 32px;
+  border-radius: 12px;
 }
+
 
 .hero-brand {
   font-size: 42px;
