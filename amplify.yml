@@ -1,9 +1,13 @@
 version: 1
+backend:
+  phases:
+    build:
+      commands: []
 frontend:
   phases:
     preBuild:
       commands:
-        - npm install
+        - npm ci
     build:
       commands:
         - npm run build
