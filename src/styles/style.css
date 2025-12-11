@@ -15,8 +15,6 @@ a {
   color: inherit;
 }
 
-/* FULL-PAGE HERO BANNER */
-.hero-banner {
 /* FULL-PAGE HERO BANNER (image only, text baked into image) */
 .hero-banner {
   position: relative;
@@ -31,7 +29,7 @@ a {
 .hero-search-wrapper {
   position: absolute;
   left: 50%;
-  bottom: 60px;           /* tweak this up/down if needed */
+  bottom: 60px;              /* tweak up/down if needed */
   transform: translateX(-50%);
   width: 100%;
   padding: 0 5vw;
@@ -49,7 +47,6 @@ a {
   outline: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-
 
 /* NAVBAR */
 .navbar {
@@ -86,36 +83,6 @@ a {
 
 .main-inner {
   flex: 1;
-}
-
-/* (Optional) Legacy top-strip hero – kept in case it's still used */
-.hero {
-  padding: 40px 40px 10px 40px;
-}
-
-.hero-title {
-  font-size: 32px;
-  margin: 0 0 8px 0;
-}
-
-.hero-subtitle {
-  margin: 0;
-  color: #7a6b5c;
-}
-
-/* SEARCH BAR */
-.search-bar {
-  margin-top: 16px;
-  max-width: 360px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid #dec9b8;
-  outline: none;
-  font-size: 14px;
 }
 
 /* PRODUCT GRID */
@@ -376,10 +343,6 @@ a {
   .cart-layout,
   .checkout-page {
     grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 24px;
   }
 
   .product-grid {

@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 import React from "react";
 
 export default function Hero({ onSearch }) {
@@ -13,7 +12,6 @@ export default function Hero({ onSearch }) {
       className="hero-banner"
       style={{ backgroundImage: 'url("/hero-banner.jpg")' }}
     >
-      {/* Only the real functional search box, no extra text */}
       <div className="hero-search-wrapper">
         <input
           type="text"
