@@ -23,10 +23,10 @@ export default function Home() {
 
   return (
     <>
-      {/* FULL-PAGE HERO BANNER WITH BACKGROUND IMAGE */}
+      {/* FULL-PAGE HERO WITH SEARCH */}
       <Hero onSearch={setSearchTerm} />
 
-      {/* PRODUCT GRID BELOW HERO */}
+      {/* PRODUCTS BELOW HERO */}
       <div className="product-grid">
         {filteredProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
@@ -36,3 +36,4 @@ export default function Home() {
     </>
   );
 }
+
