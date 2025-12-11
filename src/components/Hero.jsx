@@ -13,17 +13,8 @@ export default function Hero({ onSearch }) {
       className="hero-banner"
       style={{ backgroundImage: 'url("/hero-banner.jpg")' }}
     >
-      <div className="hero-content">
-        <h1 className="hero-brand">Nova Marketplace</h1>
-
-        <h2 className="hero-tagline">
-          Discover Handmade, Home &amp; Fashion Treasures
-        </h2>
-
-        <p className="hero-subtext">
-          Curated decor, textiles, apparel and unique artisan-crafted finds.
-        </p>
-
+      {/* Only the real functional search box, no extra text */}
+      <div className="hero-search-wrapper">
         <input
           type="text"
           className="hero-search"

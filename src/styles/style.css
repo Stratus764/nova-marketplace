@@ -17,47 +17,29 @@ a {
 
 /* FULL-PAGE HERO BANNER */
 .hero-banner {
+/* FULL-PAGE HERO BANNER (image only, text baked into image) */
+.hero-banner {
   position: relative;
   width: 100%;
   min-height: 100vh; /* Fill the entire first screen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+/* Wrapper that positions the real search box over the image search bar */
+.hero-search-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;           /* tweak this up/down if needed */
+  transform: translateX(-50%);
+  width: 100%;
   padding: 0 5vw;
-  margin: 0;
-  border-radius: 0;
+  display: flex;
+  justify-content: center;
 }
 
-.hero-content {
-  position: relative;
-  max-width: 720px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.hero-brand {
-  margin: 0 0 16px 0;
-  font-size: clamp(2.8rem, 5vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.hero-tagline {
-  margin: 0 0 16px 0;
-  font-size: clamp(1.6rem, 3vw, 2.3rem);
-  font-weight: 500;
-}
-
-.hero-subtext {
-  margin: 0 0 24px 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  opacity: 0.95;
-}
-
+/* Actual functional search input */
 .hero-search {
   width: min(540px, 100%);
   padding: 14px 20px;
@@ -67,6 +49,7 @@ a {
   outline: none;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
 
 /* NAVBAR */
 .navbar {
