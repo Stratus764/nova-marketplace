@@ -1,40 +1,38 @@
-import heroImage from "../assets/hero-banner.png";
+import { useEffect, useState } from "react";
+import ProductCard from "../components/ProductCard";
+import Hero from "../components/Hero";
 
 export default function Home() {
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    fetch("/data/products.json")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const filteredProducts = products.filter((p) => {
+    const term = searchTerm.toLowerCase();
+    if (!term) return true;
+    return (
+      p.title.toLowerCase().includes(term) ||
+      (p.description && p.description.toLowerCase().includes(term))
+    );
+  });
+
   return (
-    <div className="relative w-full h-[90vh] overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          filter: "brightness(65%)", // darkens for text contrast
-        }}
-      />
+    <>
+      {/* FULL-PAGE HERO WITH SEARCH */}
+      <Hero onSearch={setSearchTerm} />
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
-          Nova Marketplace
-        </h1>
-
-        <h2 className="text-2xl md:text-3xl font-medium mb-4 drop-shadow-lg">
-          Discover Handmade, Home & Fashion Treasures
-        </h2>
-
-        <p className="text-lg md:text-xl max-w-2xl mb-10 drop-shadow-lg">
-          Curated decor, textiles, apparel and unique artisan-crafted finds.
-        </p>
-
-        {/* Search Bar */}
-        <div className="w-full max-w-xl">
-          <input
-            type="text"
-            placeholder="Search for products..."
-            className="w-full px-6 py-4 rounded-xl text-gray-800 bg-white shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-          />
-        </div>
+      {/* PRODUCTS BELOW HERO */}
+      <div className="product-grid">
+        {filteredProducts.map((p) => (
+          <ProductCard key={p.id} product={p} />
+        ))}
+        {filteredProducts.length === 0 && <p>No items match your search.</p>}
       </div>
-    </div>
+    </>
   );
 }
