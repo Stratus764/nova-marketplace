@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
+import Hero from "../components/Hero";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -22,22 +23,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="hero">
-        <h1 className="hero-title">Discover handmade & home treasures</h1>
-        <p className="hero-subtitle">
-          Curated décor, textiles and fashion pieces with an Etsy-inspired vibe.
-        </p>
+      {/* FULL-PAGE HERO BANNER WITH BACKGROUND IMAGE */}
+      <Hero onSearch={setSearchTerm} />
 
-        <div className="search-bar">
-          <input
-            className="search-input"
-            placeholder="Search for 'macrame', 'vase', 'blanket'..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-      </div>
-
+      {/* PRODUCT GRID BELOW HERO */}
       <div className="product-grid">
         {filteredProducts.map((p) => (
           <ProductCard key={p.id} product={p} />
