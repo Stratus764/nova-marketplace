@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Hero from "../components/Hero";
@@ -23,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      {/* FULL-PAGE HERO WITH SEARCH */}
+      {/* FULL-PAGE HERO WITH BACKGROUND IMAGE + SEARCH */}
       <Hero onSearch={setSearchTerm} />
 
       {/* PRODUCTS BELOW HERO */}
@@ -36,4 +37,3 @@ export default function Home() {
     </>
   );
 }
-

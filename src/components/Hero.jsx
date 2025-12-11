@@ -13,8 +13,7 @@ export default function Hero({ onSearch }) {
       className="hero-banner"
       style={{ backgroundImage: 'url("/hero-banner.jpg")' }}
     >
-      <div className="hero-overlay" />
-      <div className="hero-inner">
+      <div className="hero-content">
         <h1 className="hero-brand">Nova Marketplace</h1>
 
         <h2 className="hero-tagline">
@@ -25,14 +24,12 @@ export default function Hero({ onSearch }) {
           Curated decor, textiles, apparel and unique artisan-crafted finds.
         </p>
 
-        <div className="hero-search-wrapper">
-          <input
-            type="text"
-            className="hero-search-input"
-            placeholder="Search for products..."
-            onChange={handleSearchChange}
-          />
-        </div>
+        <input
+          type="text"
+          className="hero-search"
+          placeholder="Search for products..."
+          onChange={handleSearchChange}
+        />
       </div>
     </section>
   );
