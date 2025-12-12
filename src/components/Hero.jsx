@@ -1,17 +1,17 @@
 // src/components/Hero.jsx
 import React from "react";
 
-export default function Hero({ onSearch }) {
-  const handleSearchChange = (e) => {
+function Hero({ onSearch }) {
+  const handleSearchChange = (event) => {
     if (onSearch) {
-      onSearch(e.target.value);
+      onSearch(event.target.value);
     }
   };
 
   return (
     <section
       className="hero-banner"
-      // IMPORTANT: uses the image from the public folder
+      // Image is loaded from the public folder
       style={{ backgroundImage: 'url("/hero-banner.jpg")' }}
     >
       <div className="hero-content">
@@ -35,5 +35,7 @@ export default function Hero({ onSearch }) {
     </section>
   );
 }
+
+export default Hero;
 
 }
