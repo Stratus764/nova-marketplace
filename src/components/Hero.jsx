@@ -1,4 +1,6 @@
+// src/components/Hero.jsx
 import React from "react";
+import heroBanner from "../assets/hero-banner.jpg";
 
 export default function Hero({ onSearch }) {
   const handleSearchChange = (e) => {
@@ -10,13 +12,23 @@ export default function Hero({ onSearch }) {
   return (
     <section
       className="hero-banner"
-      style={{ backgroundImage: 'url("/hero-banner.jpg")' }}
+      style={{ backgroundImage: `url(${heroBanner})` }}
     >
-      <div className="hero-search-wrapper">
+      <div className="hero-content">
+        <h1 className="hero-brand">Nova Marketplace</h1>
+
+        <h2 className="hero-tagline">
+          Discover Handmade, Home &amp; Fashion Treasures
+        </h2>
+
+        <p className="hero-subtext">
+          Curated decor, textiles, apparel and unique artisan-crafted finds.
+        </p>
+
         <input
           type="text"
           className="hero-search"
-          placeholder="Search for products..."
+          placeholder="Type to search..."
           onChange={handleSearchChange}
         />
       </div>
