@@ -10,29 +10,36 @@ export default function Home() {
   useEffect(() => {
     fetch("/data/products.json")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data))
+      .catch((err) => {
+        console.error("Failed to load products.json", err);
+      });
   }, []);
 
   const filteredProducts = products.filter((p) => {
-    const term = searchTerm.toLowerCase();
+    const term = searchTerm.toLowerCase().trim();
     if (!term) return true;
-    return (
-      p.title.toLowerCase().includes(term) ||
-      (p.description && p.description.toLowerCase().includes(term))
-    );
+
+    const title = p.title ? p.title.toLowerCase() : "";
+    const desc = p.description ? p.description.toLowerCase() : "";
+
+    return title.includes(term) || desc.includes(term);
   });
 
   return (
     <>
-      {/* FULL-PAGE HERO WITH BACKGROUND IMAGE + SEARCH */}
+      {/* Full hero with background + search input */}
       <Hero onSearch={setSearchTerm} />
 
-      {/* PRODUCTS BELOW HERO */}
+      {/* Product grid below hero */}
       <div className="product-grid">
-        {filteredProducts.map((p) => (
-          <ProductCard key={p.id} product={p} />
+        {filteredProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
-        {filteredProducts.length === 0 && <p>No items match your search.</p>}
+
+        {filteredProducts.length === 0 && (
+          <p>No items match your search.</p>
+        )}
       </div>
     </>
   );
