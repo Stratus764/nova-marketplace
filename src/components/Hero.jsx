@@ -1,6 +1,5 @@
 // src/components/Hero.jsx
 import React from "react";
-import heroBanner from "../assets/hero-banner.jpg";
 
 export default function Hero({ onSearch }) {
   const handleSearchChange = (e) => {
@@ -12,7 +11,8 @@ export default function Hero({ onSearch }) {
   return (
     <section
       className="hero-banner"
-      style={{ backgroundImage: `url(${heroBanner})` }}
+      // IMPORTANT: uses the image from the public folder
+      style={{ backgroundImage: 'url("/hero-banner.jpg")' }}
     >
       <div className="hero-content">
         <h1 className="hero-brand">Nova Marketplace</h1>
@@ -34,4 +34,6 @@ export default function Hero({ onSearch }) {
       </div>
     </section>
   );
+}
+
 }
