@@ -11,16 +11,10 @@ export default function Hero({ onSearch }) {
   return (
     <section
       className="hero-banner"
-      style={{ backgroundImage: 'url("/hero-banner.jpg")' }} // from public/
+      style={{ backgroundImage: 'url("/hero-banner.jpg")' }} // uses public/hero-banner.jpg
     >
-      <div className="hero-content">
-        <h1 className="hero-brand">Nova Marketplace</h1>
-
-        <h2 className="hero-tagline">
-          Discover Home &amp; Fashion Treasures
-        </h2>
-
-        {/* Search box directly under the two lines of text */}
+      {/* Only the functional search bar overlay – no extra headings or text */}
+      <div className="hero-search-wrapper">
         <input
           type="text"
           className="hero-search"
