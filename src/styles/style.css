@@ -65,13 +65,14 @@ a {
 .hero-search-wrapper {
   position: absolute;
   left: 50%;
-  bottom: 60px;                /* adjust to move the bar up/down */
+  top: 63%;              /* controls vertical position – tweak 60–66% if you want */
   transform: translateX(-50%);
   width: 100%;
   padding: 0 5vw;
   display: flex;
   justify-content: center;
 }
+
 
 /* Actual functional search input */
 .hero-search {
@@ -358,10 +359,11 @@ a {
   }
 
   .hero-search-wrapper {
-    bottom: 40px;
+    top: 65%;          /* slightly lower or higher as you prefer on mobile */
   }
 
   .hero-search {
     width: 90%;
   }
 }
+
