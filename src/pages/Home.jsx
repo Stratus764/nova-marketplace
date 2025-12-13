@@ -13,14 +13,15 @@ export default function Home() {
     fetch("/data/products.json")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data || []);
+        const list = Array.isArray(data) ? data : [];
+        setProducts(list);
 
         // Derive unique categories from products
         const cats = Array.from(
           new Set(
-            (data || [])
+            list
               .map((p) => p.category)
-              .filter(Boolean) // ignore undefined/null
+              .filter(Boolean) // drop null/undefined/empty
           )
         ).sort();
 
